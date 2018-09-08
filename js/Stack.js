@@ -9,7 +9,7 @@ export default class Stack {
 
   pop() {
     if (this.top === 0) {
-      throw new Error('Stack is not initialized');
+      throw new Error('Stack has no values');
 
       return;
     }
