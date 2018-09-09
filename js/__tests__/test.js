@@ -1,17 +1,22 @@
+const checkArr = arr => Array.isArray(arr);
 const checkString = str => typeof str === 'string';
 const checkNumber = num => typeof num === 'number';
+const checkBool = value => typeof value === 'boolean';
 const checkNumOrStr = value => checkString(value) || checkNumber(value);
-const checkArr = arr => Array.isArray(arr);
 
 export default function test(messageParams, values) {
   const { expected, result } = values;
 
-  if (checkNumOrStr(expected) && checkNumOrStr(result)) {
+  const isBool = checkBool(expected) && checkBool(result);
+  const isNumOrStr = checkNumOrStr(expected) && checkNumOrStr(result);
+
+  if (isBool || isNumOrStr) {
     checkEquality(messageParams, values);
     return;
   }
 
-  if (checkArr(expected) && checkArr(result)) {
+  const isArr = checkArr(expected) && checkArr(result);
+  if (isArr) {
     checkEquality(messageParams, {
       expected: expected.sort().join(','),
       result: result.sort().join(','),
