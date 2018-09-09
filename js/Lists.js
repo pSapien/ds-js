@@ -1,9 +1,11 @@
 /**
  *  A list is basically an ordered sequence of data where the same value may appear many times.
  *  We all have list, don't we? Be it todo lists, grocery lists, top-ten lists and so on.
+ *
+ *  So, lets build a List, shall we?
  */
 
-export default class Lists {
+export default class List {
   storage = [];
   length = 0;
 

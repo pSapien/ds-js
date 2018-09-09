@@ -6,7 +6,7 @@
  * the line is the first served. As more customers enters the line, they wait in
  * the back until it is their turn.
  *
- * So, lets build a queue.
+ * So, lets build a queue, shall we?
  */
 
 export default class Queue {
