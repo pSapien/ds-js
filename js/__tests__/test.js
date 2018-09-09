@@ -28,3 +28,12 @@ function checkEquality(messageParams, { expected, result }) {
     );
   }
 }
+
+export function beginTesting(message) {
+  console.log(`##########   BEGIN TESTING ${message}    #################`);
+}
+
+export function doneTesting(message) {
+  console.log(`##########   FINISHED TESTING ${message}    #################`);
+  console.log('\n');
+}
